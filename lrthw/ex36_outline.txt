@@ -1,0 +1,97 @@
+I. Concept
+
+    Make a zorkish game written with Ruby
+
+II. Plan
+
+    A. What's the story?
+    B. What kind of map is appropriate?
+    C. Draw the map
+    D. What kind of features are in this game?
+    E. What methods / objects / variables do we need to make those features work?
+    F. Write the rooms
+    G. Write the methods
+    H. Test the game
+    I. Show it to someone!
+
+III. The story 
+    
+    You have found a book or wallet or something belonging to someone. The address is written inside but the last digit
+    is smudged. You just got off a bus at approximately the correct location but if you really want to return the book
+    you'll need to go door to door to find them. Hopefully you can do it before you get so impatient you just leave!
+
+IV. The map
+
+    I want a long street with a number of houses. The player has most of the address already so it would need to occur
+    on just one block. Moving up a block wouldn't make sense because it wouldn't match the address. So let's say a
+    single block with five houses on either side. That's ten rooms just making up the street (both sides). Not every
+    house will have rooms inside, but every house will have a room dedicated to its front door. It seems unlikely 
+    that the player would really be able to enter every house and I'm not quite to the level of this being so very 
+    open world as breaking and entering. Nor do I have the desire write it up. 
+
+    So let's assume a few houses just no one is home. That's an extra 10 rooms to account for doors. 20 rooms so far.
+
+    One home a lady will offer to let the player come in for tea and she will shuttle the player into the kitchen.
+    This house should also have a bathroom and a living room (where the exit is). 23 rooms.
+
+    Another home a man will tell the player that he will let them know which house he is looking for if he goes
+    across the street and feeds a cat for him. There are no rooms in this home. 23 rooms still.
+
+    Let's just say 3 empty, no one answers at the player's knocking, homes. 23 rooms still, and five home accounted for.
+
+    Then there is the target home. No one answers at this home either, but the player can acquire a key to the house.
+    This will happen after a sequence of events: feed cat > man tells you to go to a home > you go to someone else's
+    home > they tell you to speak to the old woman and say "Lacey" sent you > old woman lights up and gets a key for
+    the player and sends them to the correct house. There is no one at the house but it will contain three rooms:
+    A living room, a bedroom, and a study / library. 26 rooms.
+
+    There is Lacey's home, but she doesn't let you in.
+
+    There is a grumpy old man who yells at you for knocking on his door.
+
+    There's a cat house. This house has a living room, a bedroom, and a kitchen. This is probably where most of the
+    inventory of the game matters. You collect a can of cat food from a closet, a can opener from the kitchen.
+    You put the cat food into the bowl.
+
+    Finally there's a stoner house. Some stoner answers when the player knocks on the door and invites them in. If they go
+    in there is a large drain on their patience because the stoner keeps looking for something and never finding it.
+    If they try to leave the stoner asks them to wait just a moment but if they ask about the book the stoner gets
+    confused and starts over. Each tick drains on patience. Probably the most likely way someone will 'lose'.
+
+V. Draw the map:
+
+    Layout:
+
+    [LC] | | [MT]
+    [!!] | | [KT]
+    [MT] | | [OM]
+    [ST] | | [TM]
+    [OW] | | [MT]
+
+VI. Features
+
+    Player will have an inventory.
+    There will be a patience meter, which ends the game if a certain point is reached.
+    Otherwise, in terms of features, this will be relatively straightforward.
+
+VII. What methods / objects / variables will be necessary?
+
+    Methods:
+        Something to manipulate patience levels
+        Something to announce a drop in tier of patience on the players part
+        A 'Help' command the displays commands and what they do
+        A 'Quit' method to exit the game gracefully
+        'Use' item method
+        'Ask about' method to trigger conversation about key objects
+        'Move' to go in a direction
+        'Open' to open specific key items (like the closet)
+        'Examine' to examine a specific item
+        'Look' to look at the room around them again 
+
+    Variables:
+        Player location
+        Patience
+    
+    Objects:
+        An array of rooms
+        An array of items in players inventory
