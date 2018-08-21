@@ -34,7 +34,7 @@ IV. The map
     One home a lady will offer to let the player come in for tea and she will shuttle the player into the kitchen.
     This house should also have a bathroom and a living room (where the exit is). 23 rooms.
 
-    Another home a man will tell the player that he will let them know which house he is looking for if he goes
+    Another home a Quest Man will tell the player that he will let them know which house he is looking for if he goes
     across the street and feeds a cat for him. There are no rooms in this home. 23 rooms still.
 
     Let's just say 3 empty, no one answers at the player's knocking, homes. 23 rooms still, and five home accounted for.
@@ -51,12 +51,12 @@ IV. The map
 
     There's a cat house. This house has a living room, a bedroom, and a kitchen. This is probably where most of the
     inventory of the game matters. You collect a can of cat food from a closet, a can opener from the kitchen.
-    You put the cat food into the bowl.
+    You put the cat food into the bowl. 29 rooms.
 
     Finally there's a stoner house. Some stoner answers when the player knocks on the door and invites them in. If they go
     in there is a large drain on their patience because the stoner keeps looking for something and never finding it.
     If they try to leave the stoner asks them to wait just a moment but if they ask about the book the stoner gets
-    confused and starts over. Each tick drains on patience. Probably the most likely way someone will 'lose'.
+    confused and starts over. Each tick drains on patience. Probably the most likely way someone will 'lose'. 30 rooms.
 
 V. Draw the map:
 
@@ -64,8 +64,8 @@ V. Draw the map:
 
     [LC] | | [MT]
     [!!] | | [KT]
-    [MT] | | [OM]
-    [ST] | | [TM]
+    [MT] | | [QM]
+    [MJ] | | [OM]
     [OW] | | [MT]
 
 VI. Features
