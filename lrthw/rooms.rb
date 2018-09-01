@@ -1,245 +1,71 @@
-St1
+module Rooms
 
-You are standing at a bus stop. You can see
-a house in front of you, 2400 N Willow.
-Across the street you see another house,
-2411 N Willow. The block also continues
-before you towards the higher numbers.
 
-OW1
 
-You are standing at the doorstep of 2400
-N Willow. The house is old looking with
-little care taken of the lawn. Weeds 
-spring up everywhere. There is a welcome
-mat at your feet and a the door has a
-knocker shaped like an apple.
+    # [ [description, [exits in text, exit numbers]] ]
+    rooms = [["You are standing at a bus stop. You can see\na house in front of you, 2400 N Willow.\nAcross the street you see another house,\n2411 N Willow. The block also continues\nbefore you towards the higher numbers.", 
+                [["North", 7], ["East", 1], ["West", 2]]],
+             ["You are standing in front of 2411 N Willow.\nAcross the street from you, you can see a\nbus stop, as well as a house with the\naddress 2400 N Willow. The block also\ncontinues before you towards the\nhigher numbers.\n",
+                [["North", 8], ["East", 6], ["West", 0]]],
+            ["You are standing at the doorstep of 2400\n N Willow. The house is old looking with\n little care taken of the lawn. Weeds\n spring up everywhere. There is a welcome\n mat at your feet and a the door has a\n knocker shaped like an apple.\n", 
+                [["West", 3], ["East", 0]]],
+            ["You are in a living room. On bookcases\nsit numerous frames containing photos,\ncovered in dust. There is an old TV\nplaying a movie on mute. There are exits\nto the bathroom, kitchen, and back outside.\n",
+                [["Kitchen", 4], ["Bathroom", 5], ["Outside", 2]]],    
+            ["You are in a kitchen. There is a slight\nsmell of cigarrette smoke in the air.\nThe kitchen counter has pots and pans\nall over and the sink is filled with\ndishes. A table is set in the middle\nwith a nice cloth and doilies. A door\nleads to the living room.\n",
+                [["LivingRoom", 3]]],
+            ["You are in a bathroom. There is a very\nstrong smell of cigarrette smoke and\n you can see on the edge of the bathtub\nan ashtray filled with butts. The\nbathtub is clawfooted and takes up much\nof the space in this room. There is a\ndoor back to the living room.\n",
+                [["LivingRoom", 3]]],
+            ["You are standing at the doorstep of 2411\nN Willow. The house seems quiet. In the\nlawn you see a placcard announcing\n\"Vote for Milligan!\" but as far as you\ncan recall, that election took place\ntwo years ago.\n",
+                [["West", 1]]],
+            ["You are standing in front of 2422 N Willow.\nOn the sidewalk you see carved into the\nconcrete \"L <3 B\". Across the street you\ncan see 2433 N Willow. You can also see\nthe block continues in both directions.\n",
+                [["West", 9], ["East", 8], ["North", 12], ["South", 0]]],
+            ["You are standing in front of 2433 N Willow.\nAcross the street you can see 2422 N Willow.\nYou can also see the block continues in\nboth directions.\n",
+                [["West", 7], ["East", 11], ["North", 13], ["South", 1]]],
+            ["You are on the doorstep of 2422 N Willow.\nThere is loud music coming from the house,\nsomething like Bob Marley but with a hip\nmodern twist. It sounds awful. The lawn\nis very tall and the blinds of the house\nare drawn.\n",
+                [["West", 10], ["East", 7]]],
+            ["You are in a living room. There are black\nlight posters all over the walls and\nthere is a light marijuana haze permeating\nthe room. The music playing is very loud,\nmaking it difficult to concentrate on\nanything going on around you.\n",
+                [["Outside", 9]]],
+            ["You are on the doorstep of 2433 N Willow.\nThe lawn is very neatly cut, and lining the\nproperty is an amazingly well kempt row\nof hedges. They look like something you\nwould see in a posh home and garden\nmagazine.\n",
+                [["West", 8]]],
+            ["You are standing in front of 2444 N Willow.\nAcross the street you can see 2455 N Willow.\nYou can also see the block continues in\nboth directions.\n",
+                [["North", 16], ["East", 13], ["South", 7], ["West", 14]]],
+            ["You are standing in front of 2455 N Willow.\nAcross the street you can see 2444 N Willow.\nYou can also see the block continues in\nboth directions.\n",
+                [["North", 17], ["East", 15], ["South", 8], ["West", 12]]],
+            ["You are at the doorstep of 2444 N Willow.\nYou can hear a television playing inside\nthe house. The door has a sign that reads\n\"No Solicitors\". On the porch is a rocking\nchair and a basket filled with logs.\n",
+                [["East", 12]]],
+            ["You are at the doorstep of 2455 N Willow.\nThe lawn here is well kempt and there is\na red Honda in the driveway. You can smell\nsomething grilling.\n",
+                [["West", 13]]],
+            ["You are standing in front of 2466 N Willow.\nAcross the street you can see 2477 N Willow.\nYou can also see the block continues in\nboth directions.\n",
+                [["North", 26], ["East", 17], ["South", 12], ["West", 18]]],
+            ["You are standing in front of 2477 N Willow.\nAcross the street you can see 2466 N Willow.\nYou can also see the block continues in\nboth directions.\n",
+                [["North", 27], ["East", 22], ["South", 13], ["West", 16]]],
+            ["You at the doorstep of 2466 N Willow. The\nshades are down, and you do not hear anything\ncoming from the house. The lawn looks\nfreshly cut.\n",
+                [["East", 16], ["West", 19]]],
+            ["You are in a living room. You can see a\ncouch with clothes strewn across it. A \nbookcase that houses a television and some\nblu-rays. You can also see a coffee table\nwith an empty wine glass. There are a\nbedroom and what looks like a study\nadjoining the room.\n",
+                [["Outside", 18], ["Bedroom", 20], ["Study", 21]]],
+            ["You are in a bedroom. The room is very\nmessy. There are clothes scattered\neverywhere and on top of the bed lies\na partially filled suitcase. On a\ndresser you see a piece of paper.\n",
+                [["LivingRoom", 19]]],
+            ["You are in a study. The room is lined\nwith bookcases. There is one space in\nthe bookcases that looks like a perfect\nfit for the book you have with you. On\na desk in the middle of the room you\nnotice a phone, the answering machine\nnext to it is blinking.\n",
+                [["LivingRoom", 19]]],
+            ["You are on the doorstep of 2477 N Willow.\nThe lawn looks a little overgrown. The\ndoorbell is shaped like a cat wrapped\naround a ball.\n",
+                [["East", 23], ["West", 17]]],
+            ["This living room smells like cats.\nThere are three scratching posts in the\n room, and some posters of kittens in what\nlooks like unnatural poses. There are\na few cat toys on a table. This room splits\noff into a kitchen and a bedroom.\n",
+                [["Outside", 22], ["Kitchen", 24], ["Bedroom", 25]]],
+            ["The kitchen is very dirty. There are\nplates and boxes on the ground. It seems\nas if the cat has knocked them off of\nthe counter at some point. Bits of old\nfood are caked onto the tile floor.\nYou can see a cabinet and a few drawers.\nThere is also a cat food dish on the floor.\n",
+                [["LivingRoom", 23]]],
+            ["You are in a bedroom. This room is very neat.\nOn the bed you see a bedspread with little\ncat designs stitched in. There is a cat\nshaped lamp and even a chair propped in front\nof a vanity mirror is somehow cat shaped.\n",
+                [["LivingRoom", 23]]],
+            ["You are standing in front of 2488 N Willow.\nAcross the street you can see 2499 N Willow.\nThe block continues back towards the lower\nnumbers.\n",
+                [["East", 27], ["South", 16], ["West", 28]]],
+            ["You are standing in front of 2499 N Willow.\nAcross the street you can see 2488 N Willow.\nThe block continues back towards the lower\nnumbers.\n",
+                [["East", 29], ["South", 17], ["West", 26]]],
+             ["You are on the doorstep of 2488 N Willow.\nThere are a lot of pink flamingos in the\nlawn. On the door hangs a sign that says\n\"All are welcome!\". You do not hear any\nsounds coming from inside.\n",
+                [["East", 26]]],
+             ["You are on the doorstep of 2499 N Willow.\nThe entire yard looks burnt. All of the\ngrass is dead and you can see the remains\nof a pit someone had dug and used to\nburn something inside of.\n",
+                [["West", 27]]]
+            ]
+            
 
-OW2
+        define_method(:returnRooms) { |location| return rooms[location] }
 
-You are in a kitchen. There is a slight
-smell of cigarrette smoke in the air.
-The kitchen counter has pots and pans
-all over and the sink is filled with
-dishes. A table is set in the middle
-with a nice cloth and doilies. A door
-leads to the living room.
-
-OW3
-
-You are in a living room. On bookcases
-sit numerous frames containing photos,
-covered in dust. There is an old TV
-playing a movie on mute. There are exits
-to the bathroom, kitchen, and back outside.
-
-OW4
-
-You are in a bathroom. There is a very
-strong smell of cigarrette smoke and 
-you can see on the edge of the bathtub
-an ashtray filled with butts. The
-bathtub is clawfooted and takes up much
-of the space in this room. There is a
-door back to the living room.
-
-St2
-
-You are standing in front of 2411 N Willow.
-Across the street from you, you can see a
-bus stop, as well as a house with the
-address 2400 N Willow. The block also
-continues before you towards the
-higher numbers.
-
-MT1
-
-You are standing at the doorstep of 2411
-N Willow. The house seems quiet. In the
-lawn you see a placcard announcing
-"Vote for Milligan!" but as far as you
-can recall, that election took place
-two years ago.
-
-St3
-
-You are standing in front of 2422 N Willow.
-On the sidewalk you see carved into the
-concrete "L <3 B". Across the street you
-can see 2433 N Willow. You can also see
-the block continues in both directions.
-
-MJ1
-
-You are on the doorstep of 2422 N Willow.
-There is loud music coming from the house,
-something like Bob Marley but with a hip
-modern twist. It sounds awful. The lawn
-is very tall and the blinds of the house
-are drawn.
-
-MJ2
-
-You are in a living room. There are black
-light posters all over the walls and
-there is a light marijuana haze permeating
-the room. The music playing is very loud,
-making it difficult to concentrate on
-anything going on around you.
-
-St4
-
-You are standing in front of 2433 N Willow.
-Across the street you can see 2422 N Willow.
-You can also see the block continues in
-both directions.
-
-OM1
-
-You are on the doorstep of 2433 N Willow.
-The lawn is very neatly cut, and lining the
-property is an amazingly well kempt row
-of hedges. They look like something you
-would see in a posh home and garden
-magazine.
-
-St5
-
-You are standing in front of 2444 N Willow.
-Across the street you can see 2455 N Willow.
-You can also see the block continues in
-both directions.
-
-MT2
-
-You are at the doorstep of 2444 N Willow.
-You can hear a television playing inside
-the house. The door has a sign that reads
-"No Solicitors". On the porch is a rocking
-chair and a basket filled with logs.
-
-St6
-
-You are standing in front of 2455 N Willow.
-Across the street you can see 2444 N Willow.
-You can also see the block continues in
-both directions.
-
-QM1
-
-You are at the doorstep of 2455 N Willow. 
-The lawn here is well kempt and there is
-a red Honda in the driveway. You can smell
-something grilling.
-
-St7
-
-You are standing in front of 2466 N Willow.
-Across the street you can see 2477 N Willow.
-You can also see the block continues in
-both directions.
-
-TH
-
-You at the doorstep of 2466 N Willow. The
-shades are down, and you do not hear anything
-coming from the house. The lawn looks
-freshly cut.
-
-TH1
-
-You are in a living room. You can see a
-couch with clothes strewn across it. A 
-bookcase that houses a television and some
-blu-rays. You can also see a coffee table
-with an empty wine glass. There are a
-bedroom and what looks like a study
-adjoining the room.
-
-TH2
-
-You are in a bedroom. The room is very
-messy. There are clothes scattered
-everywhere and on top of the bed lies
-a partially filled suitcase. On a
-dresser you see a piece of paper.
-
-TH3
-
-You are in a study. The room is lined
-with bookcases. There is one space in
-the bookcases that looks like a perfect
-fit for the book you have with you. On
-a desk in the middle of the room you
-notice a phone, the answering machine
-next to it is blinking.
-
-St8
-
-You are standing in front of 2477 N Willow.
-Across the street you can see 2466 N Willow.
-You can also see the block continues in
-both directions.
-
-KT1
-
-You are on the doorstep of 2477 N Willow.
-The lawn looks a little overgrown. The
-doorbell is shaped like a cat wrapped
-around a ball.
-
-KT2
-
-This living room smells like cats.
-There are three scratching posts in the 
-room, and some posters of kittens in what
-looks like unnatural poses. There are
-a few cat toys on a table.
-
-KT2
-
-The kitchen is very dirty. There are
-plates and boxes on the ground. It seems
-as if the cat has knocked them off of
-the counter at some point. Bits of old
-food are caked onto the tile floor.
-You can see a cabinet and a few drawers.
-There is also a cat food dish on the floor.
-
-KT3
-
-You are in a bedroom. This room is very neat.
-On the bed you see a bedspread with little
-cat designs stitched in. There is a cat
-shaped lamp and even a chair propped in front
-of a vanity mirror is somehow cat shaped.
-
-St9
-
-You are standing in front of 2488 N Willow.
-Across the street you can see 2499 N Willow.
-The block continues back towards the lower
-numbers.
-
-LC1
-
-You are on the doorstep of 2488 N Willow.
-There are a lot of pink flamingos in the
-lawn. On the door hangs a sign that says
-"All are welcome!". You do not hear any
-sounds coming from inside.
-
-St10
-
-You are standing in front of 2499 N Willow.
-Across the street you can see 2488 N Willow.
-The block continues back towards the lower
-numbers.
-
-MT3
-
-You are on the doorstep of 2499 N Willow.
-The entire yard looks burnt. All of the
-grass is dead and you can see the remains
-of a pit someone had dug and used to
-burn something inside of.
+end
